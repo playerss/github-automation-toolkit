@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购买GitHub自动化工具包</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .purchase-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .price-option {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .price-option:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .price-option.recommended {
+            border-color: #4CAF50;
+            position: relative;
+        }
+        
+        .recommended-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4CAF50;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0;
+        }
+        
+        .price-period {
+            font-size: 1em;
+            color: #666;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            margin-right: 10px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .qr-code {
+            max-width: 300px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .payment-steps {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .step-content p {
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .purchase-card {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .price {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="purchase-card">
+            <h1>购买GitHub自动化工具包</h1>
+            <p style="color: #666; margin-bottom: 30px;">选择适合您的版本，立即提升开发效率</p>
+            
+            <!-- 免费版 -->
+            <div class="price-option">
+                <h2>免费版</h2>
+                <div class="price">¥0<span class="price-period">/永久</span></div>
+                <ul class="features-list">
+                    <li>基础自动化脚本</li>
+                    <li>社区支持</li>
+                    <li>开源协议 (MIT)</li>
+                    <li>持续更新</li>
+                </ul>
+                <a href="https://github.com/playerss/github-automation-toolkit" class="btn btn-secondary" target="_blank">
+                    立即使用免费版
+                </a>
+            </div>
+            
+            <!-- 专业版（推荐） -->
+            <div class="price-option recommended">
+                <div class="recommended-badge">最受欢迎</div>
+                <h2>专业版</h2>
+                <div class="price">¥9.9<span class="price-period">/永久授权</span></div>
+                <ul class="features-list">
+                    <li>所有高级工具（4个核心工具）</li>
+                    <li>配置自定义和扩展</li>
+                    <li>优先技术支持</li>
+                    <li>定期功能更新</li>
+                    <li>专属功能访问</li>
+                    <li>商业使用授权</li>
+                </ul>
+                
+                <div class="qr-code">
+                    <p style="margin-bottom: 15px; font-weight: bold; color: #333;">支付宝扫码支付 ¥9.9</p>
+                    <!-- 这里应该放置你的收款码图片 -->
+                    <div style="background: #f5f5f5; padding: 40px; text-align: center; border-radius: 5px;">
+                        <p style="color: #666; margin-bottom: 10px;">[你的支付宝收款码]</p>
+                        <p style="font-size: 0.9em; color: #888;">支付后请联系我们获取授权</p>
+                    </div>
+                </div>
+                
+                <p style="color: #666; margin-top: 20px;">
+                    支付完成后，请将支付截图和您的GitHub用户名发送至：<br>
+                    <strong>745861540@qq.com</strong>
+                </p>
+            </div>
+            
+            <!-- 企业版 -->
+            <div class="price-option">
+                <h2>企业版</h2>
+                <div class="price">¥49.9<span class="price-period">/永久授权</span></div>
+                <ul class="features-list">
+                    <li>专业版所有功能</li>
+                    <li>定制化开发服务</li>
+                    <li>私有部署支持</li>
+                    <li>专属技术顾问</li>
+                    <li>团队培训服务</li>
+                    <li>优先功能需求</li>
+                </ul>
+                
+                <div class="qr-code">
+                    <p style="margin-bottom: 15px; font-weight: bold; color: #333;">支付宝扫码支付 ¥49.9</p>
+                    <!-- 这里应该放置你的收款码图片 -->
+                    <div style="background: #f5f5f5; padding: 40px; text-align: center; border-radius: 5px;">
+                        <p style="color: #666; margin-bottom: 10px;">[你的支付宝收款码]</p>
+                        <p style="font-size: 0.9em; color: #888;">支付后请联系我们定制需求</p>
+                    </div>
+                </div>
+                
+                <a href="mailto:745861540@qq.com?subject=GitHub自动化工具包企业版咨询" class="btn">
+                    联系定制需求
+                </a>
+            </div>
+            
+            <!-- 支付步骤说明 -->
+            <div class="payment-steps">
+                <h2 style="text-align: center; margin-bottom: 30px;">购买流程</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>选择版本</h3>
+                        <p>根据您的需求选择免费版、专业版(¥9.9)或企业版(¥49.9)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>扫码支付</h3>
+                        <p>使用支付宝扫描对应版本的收款码完成支付</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>发送凭证</h3>
+                        <p>将支付截图和您的GitHub用户名发送至：745861540@qq.com</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>获取授权</h3>
+                        <p>我们将在24小时内为您开通权限并发送使用指南</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 常见问题 -->
+            <div style="margin-top: 40px; text-align: left;">
+                <h3 style="margin-bottom: 20px;">常见问题</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4>Q: 支付后多久能收到授权？</h4>
+                    <p>A: 通常在24小时内，工作时间可能更快。</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4>Q: 可以开发票吗？</h4>
+                    <p>A: 目前暂不支持开发票，后续会考虑添加此功能。</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4>Q: 支持退款吗？</h4>
+                    <p>A: 数字产品一旦授权，不支持退款。请在购买前确认需求。</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4>Q: 企业版有什么特别服务？</h4>
+                    <p>A: 企业版包含定制开发、私有部署、专属支持等增值服务。</p>
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-link">← 返回产品首页</a>
+        </div>
+    </div>
+    
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新年份
+            const yearElement = document.querySelector('footer p');
+            if (yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2026', new Date().getFullYear());
+            }
+            
+            // 添加价格选项点击效果
+            const priceOptions = document.querySelectorAll('.price-option');
+            priceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    priceOptions.forEach(opt => opt.style.borderColor = '#e9ecef');
+                    this.style.borderColor = '#667eea';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
