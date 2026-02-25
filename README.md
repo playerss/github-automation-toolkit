@@ -108,10 +108,15 @@ cd github-automation-toolkit
 ### 📄 许可证
 MIT License - 详见[LICENSE](./LICENSE)
 
+### 🌐 在线体验
+- **产品网站**：https://playerss.github.io/github-automation-toolkit/
+- **购买页面**：https://playerss.github.io/github-automation-toolkit/purchase.html
+- **GitHub仓库**：https://github.com/playerss/github-automation-toolkit
+
 ### 📞 支持与联系
 - 问题反馈：[GitHub Issues](https://github.com/playerss/github-automation-toolkit/issues)
 - 商业合作：745861540@qq.com
-- 技术交流：[加入讨论]()
+- 支付支持：支付宝扫码支付，发送截图至邮箱
 
 ---
 *让开发更简单，让效率更高*
