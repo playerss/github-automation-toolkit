@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub自动化工具包 - 提升开发效率</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .features {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .feature-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-desc {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .pricing {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .price-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .price-period {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .price-features li:before {
+            content: "✓";
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🚀</div>
+            <h1>GitHub自动化工具包</h1>
+            <p class="tagline">智能工具集合，让开发更简单，让效率更高</p>
+            
+            <div class="cta-buttons">
+                <a href="https://github.com/playerss/github-automation-toolkit" class="btn" target="_blank">
+                    ⭐ Star on GitHub
+                </a>
+                <a href="https://github.com/playerss/github-automation-toolkit#readme" class="btn btn-secondary" target="_blank">
+                    📖 查看文档
+                </a>
+            </div>
+        </header>
+        
+        <section class="features">
+            <h2 class="section-title">✨ 核心功能</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">一键项目初始化</h3>
+                    <p class="feature-desc">自动创建标准项目结构，配置Git、CI/CD、文档模板，节省初始化时间。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">智能部署工具</h3>
+                    <p class="feature-desc">支持GitHub Pages、Docker、Serverless等多种部署方式，一键发布。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">代码质量检查</h3>
+                    <p class="feature-desc">集成ESLint、Prettier、安全扫描，提升代码质量，规范开发流程。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">项目管理助手</h3>
+                    <p class="feature-desc">Issue模板、PR检查、版本发布自动化，提升团队协作效率。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pricing">
+            <h2 class="section-title">💰 定价策略</h2>
+            
+            <div class="price-card">
+                <h3>免费版</h3>
+                <div class="price">¥0<span class="price-period">/永久</span></div>
+                <ul class="price-features">
+                    <li>基础自动化脚本</li>
+                    <li>社区支持</li>
+                    <li>开源协议</li>
+                    <li>持续更新</li>
+                </ul>
+                <a href="https://github.com/playerss/github-automation-toolkit" class="btn" target="_blank">
+                    立即使用
+                </a>
+            </div>
+            
+            <div class="price-card">
+                <h3>专业版</h3>
+                <div class="price">¥9.9<span class="price-period">/永久</span></div>
+                <ul class="price-features">
+                    <li>所有高级工具</li>
+                    <li>配置自定义</li>
+                    <li>优先支持</li>
+                    <li>定期更新</li>
+                    <li>专属功能</li>
+                </ul>
+                <a href="#" class="btn btn-secondary" onclick="alert('支付功能即将上线！')">
+                    立即购买
+                </a>
+            </div>
+            
+            <div class="price-card">
+                <h3>企业版</h3>
+                <div class="price">¥49.9<span class="price-period">/永久</span></div>
+                <ul class="price-features">
+                    <li>定制化开发</li>
+                    <li>私有部署</li>
+                    <li>专属支持</li>
+                    <li>培训服务</li>
+                    <li>团队协作</li>
+                </ul>
+                <a href="mailto:745861540@qq.com" class="btn btn-secondary">
+                    联系定制
+                </a>
+            </div>
+        </section>
+        
+        <section class="features">
+            <h2 class="section-title">🚀 快速开始</h2>
+            
+            <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
+                <h3>安装使用</h3>
+                <pre style="background: #f5f5f5; padding: 20px; border-radius: 10px; overflow-x: auto; margin: 20px 0;">
+<code># 克隆工具包
+git clone https://github.com/playerss/github-automation-toolkit.git
+
+# 进入目录
+cd github-automation-toolkit
+
+# 运行初始化
+./init.sh
+
+# 使用部署工具
+./tools/deploy.sh --env production --type pages
+
+# 使用代码检查
+./tools/code-check.sh --language js --strict</code>
+                </pre>
+                
+                <p style="text-align: center; margin-top: 20px;">
+                    <a href="https://github.com/playerss/github-automation-toolkit#readme" class="btn" target="_blank">
+                        查看完整文档
+                    </a>
+                </p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2026 GitHub自动化工具包 | 让开发更简单，让效率更高</p>
+            <p>联系邮箱: 745861540@qq.com | GitHub: <a href="https://github.com/playerss" style="color: white;">playerss</a></p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                本项目采用 MIT 许可证开源，欢迎贡献代码！
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为功能卡片添加点击效果
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // 更新年份
+            document.querySelector('footer p').innerHTML = 
+                document.querySelector('footer p').innerHTML.replace('2026', new Date().getFullYear());
+        });
+    </script>
+</body>
+</html>
